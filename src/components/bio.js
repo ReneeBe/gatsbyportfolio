@@ -6,6 +6,8 @@
  */
 
 import React from "react"
+import Typist from "react-typist"
+// import "./cursor.scss"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
@@ -14,7 +16,7 @@ import { rhythm } from "../utils/typography"
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.png/" }) {
+      avatar: file(absolutePath: { regex: "/./profile-pic.png/" }) {
         childImageSharp {
           fixed(width: 50, height: 50) {
             ...GatsbyImageSharpFixed
@@ -27,6 +29,10 @@ const Bio = () => {
             name
             summary
           }
+          description {
+            line1
+            line2
+          }
           social {
             linkedin
           }
@@ -35,7 +41,7 @@ const Bio = () => {
     }
   `)
 
-  const { author, social } = data.site.siteMetadata
+  const { author, social, description } = data.site.siteMetadata
   return (
     <div
       style={{
@@ -57,11 +63,18 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author.name}</strong> {author.summary}
+        <Typist>
+          Hi there! I'm <strong>{author.name}</strong> - {author.summary}
+          </ Typist>
+        <p></p>
+        <p>{description.line1}</p>
+        <p>{description.line2}</p>
         {` `}
+        Connect with me on {` `}
         <a href={`https://www.linkedin.com/in/${social.linkedin}`}>
-          You should connect with him on LinkedIn
+           LinkedIn
         </a>
+        !
       </p>
     </div>
   )

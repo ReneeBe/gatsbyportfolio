@@ -1,14 +1,20 @@
 module.exports = {
   siteMetadata: {
-    title: `Deploy and Secure`,
+    title: `Renee Berger - Software Engineer`,
     author: {
-      name: `Oleg Chursin`,
-      summary: `who lives and works in New York building cool things.`,
+      name: `Renee`,
+      summary: `a full stack software engineer in NYC.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: {
+      line1: `I have always been curious about how 'the sausage' gets made, and used to work in the fast-paced world of logistics and operations. 
+      I loved making different pieces of the operation work together and better, but realized I wanted to 'make sausage' from a more powerful 
+      platform, so I enrolled in the Grace Hopper software immersive.`,
+      line2: `Now, I am a curious and enthusiastic software engineer looking to work on a team where we can collaboratively develop intuitive, efficient, 
+      and aesthetic tools`
+    },  
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
-      linkedin: `olegchursin`
+      linkedin: `reneeberger`
     },
   },
   plugins: [

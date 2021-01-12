@@ -17,7 +17,10 @@ const SEO = ({ description, lang, meta, title }) => {
         site {
           siteMetadata {
             title
-            description
+            description {
+              line1
+              line2
+            }
             social {
               linkedin
             }
